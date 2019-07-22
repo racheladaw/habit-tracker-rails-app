@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create]
 
-  resources :habits, only: [:create]
+  resources :habits, only: [:create] do
+    resources :goals, only: [:new, :show, :edit]
+  end
+
+  resources :goals, only: [:create, :index]
 
   resources :categories, only: [:new, :create, :index] do
     resources :habits, only: [:index, :new]

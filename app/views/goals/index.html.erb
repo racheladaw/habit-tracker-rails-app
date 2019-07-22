@@ -1,0 +1,10 @@
+<h1>My Goals</h1>
+
+
+<ol>
+  <% @goals.each do |goal| %>
+    <li>
+      <%= goal.description %>
+    </li>
+  <% end %>
+</ol>
