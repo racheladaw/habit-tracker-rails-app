@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create]
 
+  resources :categories, only: [:new, :create, :index]
+
   post '/logout' => 'sessions#destroy'
 end

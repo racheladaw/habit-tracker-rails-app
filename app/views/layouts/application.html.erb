@@ -8,6 +8,39 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <h3 class="navbar-brand">Habit Tracker</h3>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <% if logged_in? %>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= "/users/#{current_user.id}" %>>My Habits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link" href="/sessions/new">Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/new">Sign Up</a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
   <body>
     <%= yield %>

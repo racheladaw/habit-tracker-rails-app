@@ -4,5 +4,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness:true
 
   has_many :goals
-  has_many :habits, through: :goals
+  has_many :habits, through: :goals 
 end
