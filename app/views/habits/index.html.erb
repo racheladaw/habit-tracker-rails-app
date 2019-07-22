@@ -1,0 +1,9 @@
+<h1><%= @category.name %> Habits</h1>
+
+<ul>
+  <% @habits.each do |habit| %>
+    <li>
+    <%= habit.name %>
+    </li>
+  <% end %>
+</ul>
