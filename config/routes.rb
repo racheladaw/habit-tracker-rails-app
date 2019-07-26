@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     resources :goals, only: [:new, :show, :edit]
   end
 
-  resources :goals, only: [:create, :index]
+  resources :goals, only: [:create, :index, :update, :destroy]
 
-  resources :categories, only: [:new, :create, :index] do
+  resources :categories, only: [:new, :create, :index, :show] do
     resources :habits, only: [:index, :new]
   end
 
@@ -19,5 +19,9 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback' => 'sessions#create'
 
-  
+  get '/home' => 'users#home'
+
+  post '/completed_habit/:id' => 'goals#completed_habit', as: 'completed_habit'
+
+
 end

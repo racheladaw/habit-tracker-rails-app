@@ -1,4 +1,12 @@
-<h1><%= @user.name %>'s Habits</h1>
+<h1>My Habits</h1>
+
+<ul>
+  <% @user.habits.each do |habit| %>
+    <li>
+      <%= habit.name %>
+    </li>
+  <% end %>
+</ul>
 
 
 <%= form_tag logout_path do %>

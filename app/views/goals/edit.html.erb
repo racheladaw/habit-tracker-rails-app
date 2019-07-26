@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <h1>Create a Goal</h1>
+  <h1>Edit This Goal</h1>
 </div>
 
 <div class="container">
@@ -19,7 +19,7 @@
     <%= f.hidden_field :habit_id %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <div class="col text-center">
-      <%= f.submit "Create Goal", :class => "btn btn-primary" %>
+      <%= f.submit "Edit Goal", :class => "btn btn-primary" %>
     </div>
   <% end %>
 </div>

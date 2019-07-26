@@ -4,18 +4,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if auth['info']['email']
+    if auth
       @user = User.find_or_create_by(email: auth['info']['email']) do |u|
        u.name = auth['info']['name']
        u.password = SecureRandom.hex(8)
       end
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to home_path
     else
-      @user = User.find_by(username: params[:username])
-      if @user.authenticate(params[:password])
+      @user = User.find_by(email: params[:email])
+      if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        redirect_to home_path
       else
         render :new
       end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_23_184327) do
+ActiveRecord::Schema.define(version: 2019_07_26_191556) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_07_23_184327) do
     t.integer "habit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start_date"
+    t.integer "days_completed", default: 0
   end
 
   create_table "habits", force: :cascade do |t|
@@ -34,7 +36,6 @@ ActiveRecord::Schema.define(version: 2019_07_23_184327) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
     t.string "password_digest"
     t.string "email"
     t.datetime "created_at", null: false

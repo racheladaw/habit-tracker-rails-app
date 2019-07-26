@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :require_login
 
   def new
     @category = Category.new
@@ -15,6 +16,10 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+  end
+
+  def show
+    @category = Category.find(params[:id])
   end
 
   private

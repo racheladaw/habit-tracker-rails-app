@@ -1,4 +1,5 @@
 class HabitsController < ApplicationController
+  before_action :require_login
 
   def new
     @habit = Habit.new(category_id: params[:category_id])

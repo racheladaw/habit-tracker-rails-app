@@ -1,0 +1,11 @@
+<h1><%= @goal.description %></h1>
+
+
+
+<p>You have completed <%= @goal.days_completed %> days of this habit</p>
+
+
+<h3>Did you complete your habit today?</h3>
+<%= form_tag completed_habit_path(@goal) do %>
+  <%= submit_tag "Habit Completed Today" %>
+<% end %>
