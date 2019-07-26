@@ -10,6 +10,9 @@ class Goal < ApplicationRecord
   end
 
   def completion_percentage
-
-  end 
+    today = Time.now.to_date
+    start = self.start_date.to_date
+    elapsed_days = (today - start).to_i
+    (self.days_completed.to_f / elapsed_days) * 100
+  end
 end
