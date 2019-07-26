@@ -13,6 +13,11 @@ class Goal < ApplicationRecord
     today = Time.now.to_date
     start = self.start_date.to_date
     elapsed_days = (today - start).to_i
-    (self.days_completed.to_f / elapsed_days) * 100
+    ((self.days_completed.to_f / elapsed_days) * 100).round(2)
   end
+
+  def days_left_to_form_habit
+    66 - self.days_completed
+  end
+
 end
