@@ -35,8 +35,15 @@ class GoalsController < ApplicationController
   def completed_habit
     @goal = Goal.find(params[:id])
     @goal.days_completed += 1
-    @goal.save
-    redirect_to habit_goal_path(@goal.habit, @goal)
+    completion_date = CompletionDate.new(date: Time.now)
+    if @goal.goal_completed_today?(completion_date.date.to_date)
+      redirect_to habit_goal_path(@goal.habit, @goal)
+    else
+      completion_date.goal_id = @goal.id
+      completion_date.save
+      @goal.save
+      redirect_to habit_goal_path(@goal.habit, @goal)
+    end
   end
 
   def destroy
