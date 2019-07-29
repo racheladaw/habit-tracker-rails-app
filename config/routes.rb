@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :goals, only: [:create, :index, :update, :destroy]
 
-  resources :categories, only: [:new, :create, :index, :show] do
+  resources :categories, only: [:new, :create, :index] do
     resources :habits, only: [:index, :new]
   end
 

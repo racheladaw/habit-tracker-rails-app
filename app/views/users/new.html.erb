@@ -1,8 +1,9 @@
 <% if @user.errors.any? %>
   <div class="container text-center error_messages">
-    <ul>
+    <h3>Please fix the following errors:</h3>
+    <ul class="list-group">
       <% @user.errors.full_messages.each do |message| %>
-        <li>
+        <li class="list-group-item">
           <%= message %>
         </li>
       <% end %>
@@ -38,8 +39,13 @@
       <%= f.submit "Sign Up", :class => "btn btn-primary" %>
     </div>
   <% end %>
+  <br>
+  <div class="container text-center">
+    <h3>OR</h3>
+  </div>
+
 </div>
 
 <div class="container text-center">
-  <%= link_to('Log in with Facebook!', '/auth/facebook', method: :post) %>
+  <%= link_to('Log in with Facebook!', '/auth/facebook', method: :post, :class => "badge badge-light") %>
 </div>

@@ -16,9 +16,9 @@
 @import "bootstrap";
 
 .field_with_errors {
-  border-style: solid;
+  border-style: dotted;
   border-width: 1px;
-  border-color: red;
+  // border-color: blue;
 }
 
 .error_messages {

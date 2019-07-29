@@ -1,13 +1,24 @@
 <div class="container text-center">
+  <h1 class="container text-center"><%= @category.name %></h1>
 
-  <h1><%= @category.name %> Habits</h1>
+  <h3>Most Popular Habits in this Category</h3>
 
   <ul>
-    <% @habits.each do |habit| %>
+    <% @category.popular_habits_in_category.each do |habit| %>
       <li>
-      <%= habit.name %>
+        <%= habit.name %>
       </li>
     <% end %>
   </ul>
-  
+
+
+  <h3>All Habits in This Category</h3>
+
+  <ol class="list-group text-center">
+    <% @category.habits.each do |habit| %>
+      <li class="list-group-item"><%= habit.name %> --- <%= link_to "Create a new goal for this habit", new_habit_goal_path(habit) %></li>
+    <% end %>
+  </ol>
+
+  <%= link_to "Create a New Habit in The #{@category.name} Category", new_category_habit_path(@category) %>
 </div>

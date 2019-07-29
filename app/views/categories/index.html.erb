@@ -6,7 +6,7 @@
   <ul>
     <% @categories.each do |category| %>
       <li>
-        <%= link_to category.name, category_path(category) %>
+        <%= link_to category.name, category_habits_path(category) %>
       </li>
     <% end %>
   </ul>
