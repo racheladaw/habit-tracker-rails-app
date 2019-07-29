@@ -1,26 +1,29 @@
-<h1>My Goals</h1>
+<div class="container text-center">
+
+  <h1>My Goals</h1>
 
 
-<ol>
-  <% @goals.each do |goal| %>
-    <li>
-      <%= goal.description %>
-      <ul>
-        <li>
-          Start Date: <%= goal.readable_date %>
-        </li>
-        <li>
-          <%= link_to "View This Goal", habit_goal_path(goal.habit, goal) %>
-        </li>
-        <li>
-          <%= link_to "Edit This Goal", edit_habit_goal_path(goal.habit, goal) %>
-        </li>
-        <li>
-          <%= form_tag goal_path(goal), method: "delete" do %>
-            <%= submit_tag "Delete Goal" %>
-          <% end %>
-        </li>
-      </ul>
-    </li>
-  <% end %>
-</ol>
+  <ol>
+    <% @goals.each do |goal| %>
+      <li>
+        <%= goal.description %>
+        <ul>
+          <li>
+            Start Date: <%= goal.readable_date %>
+          </li>
+          <li>
+            <%= link_to "View This Goal", habit_goal_path(goal.habit, goal) %>
+          </li>
+          <li>
+            <%= link_to "Edit This Goal", edit_habit_goal_path(goal.habit, goal) %>
+          </li>
+          <li>
+            <%= form_tag goal_path(goal), method: "delete" do %>
+              <%= submit_tag "Delete Goal" %>
+            <% end %>
+          </li>
+        </ul>
+      </li>
+    <% end %>
+  </ol>
+</div>

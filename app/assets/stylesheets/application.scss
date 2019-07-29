@@ -14,3 +14,14 @@
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+.field_with_errors {
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
+}
+
+.error_messages {
+  color: red;
+  font-weight: bold;
+}

@@ -1,3 +1,15 @@
+<% if @user.errors.any? %>
+  <div class="container text-center error_messages">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li>
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="container text-center">
   <h1>Sign Up</h1>
 </div>
@@ -28,4 +40,6 @@
   <% end %>
 </div>
 
-<%= link_to('Log in with Facebook!', '/auth/facebook', method: :post) %>
+<div class="container text-center">
+  <%= link_to('Log in with Facebook!', '/auth/facebook', method: :post) %>
+</div>

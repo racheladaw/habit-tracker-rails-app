@@ -1,14 +1,17 @@
-<h1>My Habits</h1>
+<div class="container text-center">
+  <h1>My Habits</h1>
 
-<ul>
-  <% @user.habits.each do |habit| %>
-    <li>
-      <%= habit.name %>
-    </li>
+  <ul>
+    <% @user.habits.each do |habit| %>
+      <li>
+        <%= habit.name %>
+      </li>
+    <% end %>
+  </ul>
+
+
+  <%= form_tag logout_path do %>
+    <%= submit_tag "Log Out" %>
   <% end %>
-</ul>
 
-
-<%= form_tag logout_path do %>
-  <%= submit_tag "Log Out" %>
-<% end %>
+</div>

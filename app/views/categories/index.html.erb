@@ -1,11 +1,15 @@
-<h1>Habit Categories</h1>
+<div class="container text-center">
 
-<ul>
-  <% @categories.each do |category| %>
-    <li>
-      <%= link_to category.name, category_path(category) %>
-    </li>
-  <% end %>
-</ul>
 
-<%= link_to "Create New Category", new_category_path %>
+  <h1>Habit Categories</h1>
+
+  <ul>
+    <% @categories.each do |category| %>
+      <li>
+        <%= link_to category.name, category_path(category) %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Create New Category", new_category_path %>
+</div>

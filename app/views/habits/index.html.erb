@@ -1,9 +1,13 @@
-<h1><%= @category.name %> Habits</h1>
+<div class="container text-center">
 
-<ul>
-  <% @habits.each do |habit| %>
-    <li>
-    <%= habit.name %>
-    </li>
-  <% end %>
-</ul>
+  <h1><%= @category.name %> Habits</h1>
+
+  <ul>
+    <% @habits.each do |habit| %>
+      <li>
+      <%= habit.name %>
+      </li>
+    <% end %>
+  </ul>
+  
+</div>
