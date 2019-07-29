@@ -3,23 +3,23 @@
   <h1>My Goals</h1>
 
 
-  <ol>
+  <ol class="list-group text-center">
     <% @goals.each do |goal| %>
-      <li>
-        <%= goal.description %>
-        <ul>
-          <li>
+      <li class="list-group-item">
+        <p class="thick"><%= goal.description %></p>
+        <ul class="list-group text-center">
+          <li class="list-group-item">
             Start Date: <%= goal.readable_date %>
           </li>
-          <li>
-            <%= link_to "View This Goal", habit_goal_path(goal.habit, goal) %>
+          <li class="list-group-item">
+            <%= link_to "View This Goal", habit_goal_path(goal.habit, goal), :class => "badge badge-pill badge-light w-50" %>
           </li>
-          <li>
-            <%= link_to "Edit This Goal", edit_habit_goal_path(goal.habit, goal) %>
+          <li class="list-group-item">
+            <%= link_to "Edit This Goal", edit_habit_goal_path(goal.habit, goal), :class => "badge badge-pill badge-dark w-50" %>
           </li>
-          <li>
+          <li class="list-group-item">
             <%= form_tag goal_path(goal), method: "delete" do %>
-              <%= submit_tag "Delete Goal" %>
+              <%= submit_tag "Delete Goal", :class => "btn btn-danger" %>
             <% end %>
           </li>
         </ul>
