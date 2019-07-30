@@ -56,7 +56,8 @@ Specs:
   - Habit :new is nested under Categories
   - Goal :new is nested under Habits
 
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+  - Validation errors are displayed in red when a user fails to fill out required fields or if there are other validation errors. These messages are displayed for every new form.
 
 Confirm:
 - [ ] The application is pretty DRY

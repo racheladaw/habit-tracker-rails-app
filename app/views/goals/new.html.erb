@@ -15,24 +15,6 @@
   <h1>Create a Goal</h1>
 </div>
 
-<div class="container">
-  <%= form_for @goal do |f| %>
-    <div class="form-group row">
-      <%= f.label :description, :class => "col-sm-2 col-form-label" %>
-      <div class="col-sm-10">
-        <%= f.text_field :description, :class => "form-control" %>
-      </div>
-    </div>
-    <div class="form-group row">
-      <%= f.label :start_date, :class => "col-sm-2 col-form-label" %>
-      <div class="col-sm-10">
-        <%= f.date_select :start_date, :class => "form-control" %>
-      </div>
-    </div>
-    <%= f.hidden_field :habit_id %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <div class="col text-center">
-      <%= f.submit "Create Goal", :class => "btn btn-primary" %>
-    </div>
-  <% end %>
-</div>
+<%= render "form", goal: @goal do |f| %>
+  <%= f.submit "Create Goal", :class => "btn btn-primary" %>
+<% end %>
