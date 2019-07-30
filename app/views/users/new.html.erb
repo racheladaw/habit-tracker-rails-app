@@ -1,15 +1,4 @@
-<% if @user.errors.any? %>
-  <div class="container text-center error_messages">
-    <h3>Please fix the following errors:</h3>
-    <ul class="list-group">
-      <% @user.errors.full_messages.each do |message| %>
-        <li class="list-group-item">
-          <%= message %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render :partial => 'application/error_messages', :locals => {:model => @user} %>
 
 <div class="container text-center">
   <h1>Sign Up</h1>

@@ -1,0 +1,12 @@
+<% if model.errors.any? %>
+  <div class="container text-center error_messages">
+    <h3>Please fix the following errors:</h3>
+    <ul class="list-group">
+      <% model.errors.full_messages.each do |message| %>
+        <li class="list-group-item">
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
