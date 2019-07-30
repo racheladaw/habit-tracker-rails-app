@@ -26,11 +26,6 @@
     </div>
   <% end %>
   <br>
-  <div class="container text-center">
-    <h3>OR</h3>
-  </div>
 </div>
 
-<div class="container text-center">
-  <%= link_to('Log in with Facebook!', '/auth/facebook', method: :post, :class => "badge badge-light") %>
-</div>
+<%= render "application/facebook_login" %>
