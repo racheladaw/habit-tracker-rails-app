@@ -34,7 +34,7 @@ Specs:
 
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
   - Category has a method popular_habits_in_category that uses another class level method for Habit called popular_habits and uses .select
-  - Habit has a method popular_habits that uses .select to find habits with greater than 5 users
+  - Habit has a method popular_habits that uses .select to find habits with greater than or equal to 5 users
 
 - [x] Include signup (how e.g. Devise)
   - Sign up using bcrypt and has secure password macro

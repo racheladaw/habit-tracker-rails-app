@@ -6,7 +6,7 @@ class Habit < ApplicationRecord
   has_many :users, through: :goals
 
   def self.popular_habits
-    self.all.select { |h| h.users.count > 5 }
+    self.all.select { |h| h.users.count >= 5 }
   end
 
 end
