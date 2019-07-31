@@ -34,11 +34,12 @@ class GoalsController < ApplicationController
 
   def completed_habit
     @goal = Goal.find(params[:id])
-    @goal.days_completed += 1
     completion_date = CompletionDate.new(date: Time.now)
-    if @goal.goal_completed_today?(completion_date.date.to_date)
+    if @goal.goal_completed_today?(completion_date.datetime_to_date)
+      flash[:message] = "You have already completed this habit today!"
       redirect_to habit_goal_path(@goal.habit, @goal)
     else
+      @goal.complete_goal_today
       completion_date.goal_id = @goal.id
       completion_date.save
       @goal.save

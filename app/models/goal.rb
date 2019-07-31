@@ -30,4 +30,8 @@ class Goal < ApplicationRecord
     false
   end
 
+  def complete_goal_today
+    self.days_completed += 1
+  end
+
 end
