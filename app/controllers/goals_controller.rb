@@ -19,21 +19,21 @@ class GoalsController < ApplicationController
   end
 
   def show
-    @goal = Goal.find(params[:id])
+    @goal = find_goal
   end
 
   def edit
-    @goal = Goal.find(params[:id])
+    @goal = find_goal
   end
 
   def update
-    @goal = Goal.find(params[:id])
+    @goal = find_goal
     @goal.update(goal_params)
     redirect_to goals_path
   end
 
   def completed_habit
-    @goal = Goal.find(params[:id])
+    @goal = find_goal
     if @goal.goal_completed_today?(date_today)
       flash[:message] = "You have already completed this habit today!"
       redirect_to habit_goal_path(@goal.habit, @goal)
@@ -44,7 +44,7 @@ class GoalsController < ApplicationController
   end
 
   def destroy
-    Goal.find(params[:id]).destroy
+    find_goal.destroy
     redirect_to goals_path
   end
 
@@ -56,6 +56,10 @@ class GoalsController < ApplicationController
 
   def date_today
     Time.now.to_date
+  end
+
+  def find_goal
+    Goal.find(params[:id])
   end
 
 
