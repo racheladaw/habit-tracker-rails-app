@@ -31,7 +31,9 @@ class Goal < ApplicationRecord
   end
 
   def complete_goal_today
-    self.days_completed += 1
+    self.update(days_completed: self.days_completed += 1)
+    completion_date = CompletionDate.new(date: Time.now)
+    self.completion_dates << completion_date
   end
 
 end
