@@ -61,7 +61,7 @@ Specs:
   - Validation errors are displayed in red when a user fails to fill out required fields or if there are other validation errors. These messages are displayed for every new form.
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
 - [x] Views use partials if appropriate
