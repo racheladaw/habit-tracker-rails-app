@@ -11,7 +11,7 @@ class Goal < ApplicationRecord
   end
 
   def completion_percentage
-    today = Time.now.to_date
+    today = Time.now.localtime.to_date
     start = self.start_date.to_date
     elapsed_days = [(today - start + 1).to_i, 1].max
     [((self.days_completed.to_f / elapsed_days) * 100), 100].min.round(2)
@@ -23,7 +23,7 @@ class Goal < ApplicationRecord
 
   def goal_completed_today?(date)
     self.completion_dates.each do |completion_date|
-      if completion_date.date.to_date == date
+      if completion_date.date.localtime.to_date == date
         return true
       end
     end
@@ -32,16 +32,16 @@ class Goal < ApplicationRecord
 
   def complete_goal_today
     self.update(days_completed: self.days_completed += 1)
-    completion_date = CompletionDate.new(date: Time.now.utc)
+    completion_date = CompletionDate.new(date: Time.now.localtime)
     self.completion_dates << completion_date
   end
 
   def days_until_start
-    (self.start_date.to_date - Time.now.utc.to_date).to_i
+    (self.start_date.to_date - Time.now.localtime.to_date).to_i
   end
 
   def start_date_in_future?
-    self.start_date.to_date > Time.now.utc.to_date
+    self.start_date.to_date > Time.now.localtime.to_date
   end
 
 end
