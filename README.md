@@ -13,6 +13,6 @@ To get started:
 - Run 'rails db:seed' to start using the app with some fake data
 - Run 'thin start --ssl' to start up a server
 - In your browser, navigate to https://localhost:3000/home (3000 is the port number displayed when you start your server)
-- Sign up using Facebook or entering in an e-mail and password
+- Sign up using Facebook or by entering in an e-mail and password
 - Start creating goals to meet!
 - If you complete your habit for 66 days, you will get a cute surprise!

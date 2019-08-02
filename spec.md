@@ -33,8 +33,9 @@ Specs:
   - Category must have a name and name must be unique
 
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-  - Category has a method popular_habits_in_category that uses another class level method for Habit called popular_habits and uses .select
+  - Category has a method popular_habits_in_category that uses another class level method for Habit called popular_habits and uses .select. These are displayed on the category show page.
   - Habit has a method popular_habits that uses .select to find habits with greater than or equal to 5 users
+  - Category has a scope method called alphabetize and this is used to show the categories in alphabetical order on the index page.
 
 - [x] Include signup (how e.g. Devise)
   - Sign up using bcrypt and has secure password macro
@@ -63,4 +64,4 @@ Confirm:
 - [ ] The application is pretty DRY
 - [ ] Limited logic in controllers
 - [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] Views use partials if appropriate

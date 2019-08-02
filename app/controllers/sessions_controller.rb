@@ -10,12 +10,12 @@ class SessionsController < ApplicationController
        u.name = auth['info']['name']
        u.password = SecureRandom.hex(8)
       end
-      session[:user_id] = @user.id
+      login(@user)
       redirect_to home_path
     else
       @user = User.find_by(email: params[:email])
       if @user && @user.authenticate(params[:password])
-        session[:user_id] = @user.id
+        login(@user)
         redirect_to home_path
       else
         flash.now[:message] = "Incorrect e-mail or password"
@@ -33,6 +33,10 @@ class SessionsController < ApplicationController
 
   def auth
     request.env['omniauth.auth']
+  end
+
+  def login(user)
+    session[:user_id] = user.id
   end
 
 end
