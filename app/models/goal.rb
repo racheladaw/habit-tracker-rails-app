@@ -6,10 +6,6 @@ class Goal < ApplicationRecord
   belongs_to :habit
   has_many :completion_dates, :dependent => :destroy
 
-  def days_left_to_form_habit
-    66 - self.days_completed
-  end
-
   def goal_completed_today?(date)
     self.completion_dates.each do |completion_date|
       if completion_date.date.localtime.to_date == date
@@ -23,10 +19,6 @@ class Goal < ApplicationRecord
     self.update(days_completed: self.days_completed += 1)
     completion_date = CompletionDate.new(date: Time.now.localtime)
     self.completion_dates << completion_date
-  end
-
-  def days_until_start
-    (self.start_date.to_date - Time.now.localtime.to_date).to_i
   end
 
   def start_date_in_future?

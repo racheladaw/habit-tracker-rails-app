@@ -11,4 +11,12 @@ module GoalsHelper
     [((goal.days_completed.to_f / elapsed_days) * 100), 100].min.round(2)
   end
 
+  def days_left_to_form_habit(goal)
+    66 - goal.days_completed
+  end
+
+  def days_until_start(goal)
+    (goal.start_date.to_date - Time.now.localtime.to_date).to_i
+  end
+
 end

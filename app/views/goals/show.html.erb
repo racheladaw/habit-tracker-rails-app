@@ -9,7 +9,7 @@
 
   <p>You have completed <%= @goal.days_completed %> days of this habit</p>
 
-  <p>You have <%= @goal.days_left_to_form_habit %> days left to solidify your habit</p>
+  <p>You have <%= days_left_to_form_habit(@goal) %> days left to solidify your habit</p>
 
   <p>You have completed your habit <%= completion_percentage(@goal) %>% of the time since you started</p>
 
@@ -19,7 +19,7 @@
       <%= submit_tag "Habit Completed Today", :class => "btn btn-info" %>
     <% end %>
   <% else %>
-    <h3>Your goal starts in <%= @goal.days_until_start %> day(s)!</h3>
+    <h3>Your goal starts in <%= days_until_start(@goal) %> day(s)!</h3>
   <% end %>
 </div>
 
