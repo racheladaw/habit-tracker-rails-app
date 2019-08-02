@@ -55,7 +55,7 @@ class GoalsController < ApplicationController
   end
 
   def date_today
-    Time.now.to_date
+    Time.now.utc.to_date
   end
 
   def find_goal
