@@ -6,10 +6,6 @@ class Goal < ApplicationRecord
   belongs_to :habit
   has_many :completion_dates, :dependent => :destroy
 
-  def readable_date
-    self.start_date.strftime("%B %d, %Y")
-  end
-
   def completion_percentage
     today = Time.now.localtime.to_date
     start = self.start_date.to_date

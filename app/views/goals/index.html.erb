@@ -9,7 +9,7 @@
         <p class="thick"><%= goal.description %></p>
         <ul class="list-group text-center">
           <li class="list-group-item">
-            Start Date: <%= goal.readable_date %>
+            Start Date: <%= readable_date(goal)%>
           </li>
           <li class="list-group-item">
             <%= link_to "View This Goal", habit_goal_path(goal.habit, goal), :class => "badge badge-pill badge-light w-50" %>
