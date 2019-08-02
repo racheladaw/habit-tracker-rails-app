@@ -16,3 +16,5 @@ To get started:
 - Sign up using Facebook or by entering in an e-mail and password
 - Start creating goals to meet!
 - If you complete your habit for 66 days, you will get a cute surprise!
+
+[Video Walkthrough](https://youtu.be/kg6SMv52VWk)
