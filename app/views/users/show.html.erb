@@ -2,7 +2,7 @@
   <h1>My Habits</h1>
 
   <ul class="list-group text-center">
-    <% @user.habits.each do |habit| %>
+    <% @user.unique_habits.each do |habit| %>
       <li class="list-group-item">
         <p><%= habit.name %><p>
         <p>You have <%= @user.num_of_goals_for_habit(habit) %> goal(s) for this habit </p>

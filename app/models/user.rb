@@ -10,4 +10,9 @@ class User < ApplicationRecord
     goals_for_habit = self.goals.where(habit_id: habit.id)
     goals_for_habit.count
   end
+
+  def unique_habits
+    self.habits.uniq { |h| h.name }
+  end
+
 end
