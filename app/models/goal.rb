@@ -6,13 +6,6 @@ class Goal < ApplicationRecord
   belongs_to :habit
   has_many :completion_dates, :dependent => :destroy
 
-  def completion_percentage
-    today = Time.now.localtime.to_date
-    start = self.start_date.to_date
-    elapsed_days = [(today - start + 1).to_i, 1].max
-    [((self.days_completed.to_f / elapsed_days) * 100), 100].min.round(2)
-  end
-
   def days_left_to_form_habit
     66 - self.days_completed
   end

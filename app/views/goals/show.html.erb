@@ -11,7 +11,7 @@
 
   <p>You have <%= @goal.days_left_to_form_habit %> days left to solidify your habit</p>
 
-  <p>You have completed your habit <%= @goal.completion_percentage %>% of the time since you started</p>
+  <p>You have completed your habit <%= completion_percentage(@goal) %>% of the time since you started</p>
 
   <% if !@goal.start_date_in_future? %>
     <h3>Did you complete your habit today?</h3>
