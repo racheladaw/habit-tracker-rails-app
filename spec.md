@@ -62,6 +62,10 @@ Specs:
 
 Confirm:
 - [x] The application is pretty DRY
+  - Refactored so code was not repeated as much as possible.
 - [x] Limited logic in controllers
+  - Logic in controllers moved to models.
 - [x] Views use helper methods if appropriate
+  - Utilized helper methods for logic in views when applicable.
 - [x] Views use partials if appropriate
+  - I used one form partial for goals, a partial for displaying error messages, and a partial for displaying the facebook login button.
