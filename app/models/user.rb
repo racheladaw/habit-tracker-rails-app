@@ -5,4 +5,9 @@ class User < ApplicationRecord
 
   has_many :goals
   has_many :habits, through: :goals
+
+  def num_of_goals_for_habit(habit)
+    goals_for_habit = self.goals.where(habit_id: habit.id)
+    goals_for_habit.count
+  end
 end

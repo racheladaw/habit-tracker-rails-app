@@ -4,9 +4,9 @@
   <% if !@category.popular_habits_in_category.empty? %>
     <h3>Most Popular Habits in this Category</h3>
 
-    <ul>
+    <ul class="list-group text-center">
       <% @category.popular_habits_in_category.each do |habit| %>
-        <li>
+        <li class="list-group-item">
           <%= habit.name %>
         </li>
       <% end %>

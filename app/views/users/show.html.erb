@@ -4,7 +4,8 @@
   <ul class="list-group text-center">
     <% @user.habits.each do |habit| %>
       <li class="list-group-item">
-        <%= habit.name %>
+        <p><%= habit.name %><p>
+        <p>You have <%= @user.num_of_goals_for_habit(habit) %> goal(s) for this habit </p>
       </li>
     <% end %>
   </ul>
