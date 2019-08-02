@@ -1,7 +1,7 @@
 <div class="container text-center">
   <h1 class="container text-center"><%= @category.name %></h1>
 
-  <% if !@category.popular_habits_in_category.empty? %>
+  <% if category_has_popular_habits?(@category) %>
     <h3>Most Popular Habits in this Category</h3>
 
     <ul class="list-group text-center">
@@ -13,7 +13,7 @@
     </ul>
   <% end %>
 
-  <% if !@category.habits.empty? %>
+  <% if category_has_habits?(@category) %>
     <h3>All Habits in This Category</h3>
 
     <ol class="list-group text-center">
