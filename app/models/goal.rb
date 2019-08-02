@@ -25,4 +25,8 @@ class Goal < ApplicationRecord
     self.start_date.to_date > Time.now.localtime.to_date
   end
 
+  def goal_finished?
+    self.days_completed >= 66
+  end 
+
 end

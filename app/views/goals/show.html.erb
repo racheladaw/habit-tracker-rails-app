@@ -24,7 +24,7 @@
 </div>
 
 <div class="container text-center">
-  <% if @goal.days_completed >= 66 %>
+  <% if @goal.goal_finished? %>
     <h3>Congratulations On Completing Your Goal!</h3>
     <iframe src="https://giphy.com/embed/ely3apij36BJhoZ234" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/good-job-congratulations-otter-ely3apij36BJhoZ234">via GIPHY</a></p>
   <% end %>
