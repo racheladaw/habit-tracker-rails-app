@@ -23,5 +23,7 @@ Rails.application.routes.draw do
 
   post '/completed_habit/:id' => 'goals#completed_habit', as: 'completed_habit'
 
+  get '/greatest_user' => 'users#greatest_user'
+
 
 end

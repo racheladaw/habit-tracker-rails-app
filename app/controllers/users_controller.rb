@@ -26,6 +26,10 @@ class UsersController < ApplicationController
   def home
   end
 
+  def greatest_user
+    @user = User.user_with_most_goals
+  end
+
   private
 
   def user_params
