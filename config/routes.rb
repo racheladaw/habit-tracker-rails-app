@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'users#home'
 
   resources :users, only: [:new, :create, :show]
 
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback' => 'sessions#create'
 
-  get '/home' => 'users#home'
+  get :home, to: 'users#home'
 
   post '/completed_habit/:id' => 'goals#completed_habit', as: 'completed_habit'
 
