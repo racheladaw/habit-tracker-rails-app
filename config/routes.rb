@@ -1,29 +1,27 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  resources :users, only: [:new, :create, :show]
-
-  resources :sessions, only: [:new, :create]
-
-  resources :habits, only: [:create] do
-    resources :goals, only: [:new, :show, :edit]
-  end
-
-  resources :goals, only: [:create, :index, :update, :destroy]
+  root to: 'users#home'
 
   resources :categories, only: [:new, :create, :index] do
     resources :habits, only: [:index, :new]
   end
 
-  post '/logout' => 'sessions#destroy'
+  resources :goals, only: [:create, :index, :update, :destroy]
 
-  get '/auth/facebook/callback' => 'sessions#create'
+  resources :habits, only: [:create] do
+    resources :goals, only: [:new, :show, :edit]
+  end
 
-  get '/home' => 'users#home'
+  resources :sessions, only: [:new, :create]
 
-  post '/completed_habit/:id' => 'goals#completed_habit', as: 'completed_habit'
+  resources :users, only: [:new, :create, :show]
 
-  get '/greatest_user' => 'users#greatest_user'
+  post :logout, to: 'sessions#destroy'
 
+  get '/auth/facebook/callback', to: 'sessions#create'
 
+  get :home, to: 'users#home'
+
+  post '/completed_habit/:id', to: 'goals#completed_habit', as: 'completed_habit'
+
+  get '/greatest_user', to: 'users#greatest_user'
 end
